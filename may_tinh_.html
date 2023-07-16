@@ -3,39 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        input {
+            width: 97%;
+        }
+        table {
+             width: 15%
+        }
+    </style>
 </head>
 <body>
-<table border="1" width="500">
-    <tr style="width:">
-        <td><button>(</button></td>
-        <td><button>)</button></td>
-        <td><button>%</button></td>
-        <td><button>AC</button></td>
+<table>
+    <tr>
+        <td colspan="4">
+            <input type="text" id="cal">
+        </td>
     </tr>
     <tr>
-        <td><button>7</button></td>
-        <td><button>8</button></td>
-        <td><button>9</button></td>
-        <td><button>÷</button></td>
+        <td><input type="button" value="(" onclick="getValue(event)" style="background: lightgray"></td>
+        <td><input type="button" value=")" onclick="getValue(event)" style="background: lightgray"></td>
+        <td><input type="button" value="%" onclick="getValue(event)" style="background: lightgray"></td>
+        <td><input type="button" value="AC" onclick="del()" style="background: lightgray"></td>
     </tr>
     <tr>
-        <td><button>4</button></td>
-        <td><button>5</button></td>
-        <td><button>6</button></td>
-        <td><button>x</button></td>
+        <td><input type="button" value="7" onclick="getValue(event)"></td>
+        <td><input type="button" value="8" onclick="getValue(event)"></td>
+        <td><input type="button" value="9" onclick="getValue(event)"></td>
+        <td><input type="button" value="/" onclick="getValue(event)" style="background: lightgray"></td>
     </tr>
     <tr>
-        <td><button>1</button></td>
-        <td><button>2</button></td>
-        <td><button>3</button></td>
-        <td><button>-</button></td>
+        <td><input type="button" value="4" onclick="getValue(event)"></td>
+        <td><input type="button" value="5" onclick="getValue(event)"></td>
+        <td><input type="button" value="6" onclick="getValue(event)"></td>
+        <td><input type="button" value="*" onclick="getValue(event)" style="background: lightgray"></td>
     </tr>
     <tr>
-        <td><button>0</button></td>
-        <td><button>.</button></td>
-        <td><button>=</button></td>
-        <td><button>+</button></td>
+        <td><input type="button" value="1" onclick="getValue(event)"></td>
+        <td><input type="button" value="2" onclick="getValue(event)"></td>
+        <td><input type="button" value="3" onclick="getValue(event)"></td>
+        <td><input type="button" value="-" onclick="getValue(event)" style="background: lightgray"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="0" onclick="getValue(event)"></td>
+        <td><input type="button" value="." onclick="getValue(event)"></td>
+        <td><input type="button" value="=" onclick="count()" style="background: aqua"></td>
+        <td><input type="button" value="+" onclick="getValue(event)" style="background: lightgray"></td>
     </tr>
 </table>
+
+<script>
+    let chuoi = ''
+    function getValue(event) {
+        let value = event.target.value;
+        chuoi += value;
+        document.getElementById('cal').value = chuoi;
+    }
+    function count() {
+        let a = document.getElementById('cal').value;
+        alert(eval(a))
+    }
+    function del() {
+        document.getElementById('cal').value = '';
+        chuoi = '';
+    }
+</script>
 </body>
 </html>
