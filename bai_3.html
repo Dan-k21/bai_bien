@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<input type="text" placeholder="Nhập tên" id="name">
+<button onclick="hienthiten()">Click</button>
+<p id="hienthi">< /p>
+    <script>
+        function hienthiten() {
+            let name = document.getElementById('name').value;
+            document.getElementById('hienthi').innerHTML = "Tên: " + name;
+        }
+    </script>
+</body>
+</html>

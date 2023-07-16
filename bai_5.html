@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<input type="number" placeholder="Chiều rộng" id="width">
+<input type="number" placeholder="Chiều dài" id="length">
+<button onclick="count()">Result</button>
+<p id="result1"></p>
+<p id="result2"></p>
+<script>
+  function count() {
+    let width = +document.getElementById("width").value;
+    let length = +document.getElementById("length").value;
+    document.getElementById("result1").innerHTML = "Chu vi hình chữ nhật là " +(width+length)*2;
+    document.getElementById("result2").innerHTML = "Diện tích hình chữ nhật là " + width*length;
+  }
+</script>
+</body>
+</html>
